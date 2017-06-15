@@ -1,0 +1,5 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+      "tslint.rulesDirectory": "src/client/ngExample/node_modules/codelyzer",
+    "typescript.tsdk": "src/client/ngExample/node_modules/typescript/lib",
+}
