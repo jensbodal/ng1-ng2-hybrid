@@ -12,7 +12,6 @@ app.use(bodyParser.json());
 app.use('/api', routes);
 
 app.use(express.static('./src/client/'));
-app.use(express.static('./src/client/ngExample/dist'));
 app.use(express.static('./'));
 app.use(express.static('/tmp'));
 app.use('/*', express.static('./src/client/index.html'));
