@@ -5,7 +5,7 @@
   },
   "apps": [
     {
-      "root": "ngsrc",
+      "root": "src/client/ngsrc",
       "outDir": "dist",
       "assets": [
         "assets",
@@ -36,10 +36,10 @@
   },
   "lint": [
     {
-      "project": "ngsrc/tsconfig.app.json"
+      "project": "src/client/ngsrc/tsconfig.app.json"
     },
     {
-      "project": "ngsrc/tsconfig.spec.json"
+      "project": "src/client/ngsrc/tsconfig.spec.json"
     },
     {
       "project": "e2e/tsconfig.e2e.json"
