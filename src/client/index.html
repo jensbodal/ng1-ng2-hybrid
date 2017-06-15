@@ -33,9 +33,13 @@
 <!-- endinject -->
 <!-- endbuild -->
 </head>
-
+<!--
 <body ng-app="angularSeed">
     <div class="angular-seed-main" ui-view="angularSeedMain"></div>
+-->
+
+<body>
+    <app-root>Loading...</app-root>
 
 <!-- build:js js/lib.js -->
 <!-- bower:js -->
@@ -73,6 +77,11 @@
 <!-- endangular -->
 <!-- endbuild -->
 
+<script type="text/javascript" src="src/client/ngExample/dist/inline.bundle.js"></script>
+<script type="text/javascript" src="src/client/ngExample/dist/polyfills.bundle.js"></script>
+<script type="text/javascript" src="src/client/ngExample/dist/styles.bundle.js"></script>
+<script type="text/javascript" src="src/client/ngExample/dist/vendor.bundle.js"></script>
+<script type="text/javascript" src="src/client/ngExample/dist/main.bundle.js"></script>
 </body>
 
 </html>
