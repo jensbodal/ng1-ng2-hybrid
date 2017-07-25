@@ -22,15 +22,19 @@ import './downgrades';
     AppComponent
   ],
   entryComponents: [
+    AppComponent,
     FileInfoCardComponent
   ],
   providers: [
   ],
   bootstrap: [
-    AppComponent
   ]
 })
 
 export class AppModule {
-  ngDoBootstrap() { }
+  constructor (private upgrade: UpgradeModule) { }
+
+  ngDoBootstrap() {
+    this.upgrade.bootstrap(document.documentElement, ['angularSeed', 'ng.downgrades'], {strictDi: true})
+  }
 }
