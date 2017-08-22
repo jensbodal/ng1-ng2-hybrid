@@ -17,11 +17,6 @@
     var vm = this;
     vm.pageTitle = 'Dynamic Page Title';
 
-    vm.closeSidenav = closeSidenav;
-
-    function closeSidenav() {
-      $mdSidenav('main-sidenav').close();
-    }
   }
 
 })();

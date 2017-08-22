@@ -6,15 +6,25 @@
 
   AngularSeedConfig.$inject = [
     '$locationProvider',
-    '$mdThemingProvider'
+    '$mdThemingProvider',
+    '$stateProvider'
   ];
 
   function AngularSeedConfig(
     $locationProvider,
-    $mdThemingProvider
+    $mdThemingProvider,
+    $stateProvider
   ) {
 
-    $locationProvider.html5Mode(true);
+    $stateProvider
+      .state('helloWorld', {
+        url: '/hello-world',
+        template: ''
+      });
+
+    $locationProvider.html5Mode(false);
+
+    $locationProvider.hashPrefix('');
 
     $mdThemingProvider.theme('default').dark();
   }

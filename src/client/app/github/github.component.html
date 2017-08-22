@@ -62,10 +62,12 @@
             </md-button>
         </md-input-container>
 
-        <github-file-info-card
-            ng-if="vm.haveFileInfo"
-            file-info="vm.fileInfo"
-            >
-        </github-file-info-card>
+        <md-card>
+            <app-file-info-card
+                ng-if="vm.haveFileInfo"
+                [file-info]="vm.fileInfo"
+                >
+            </app-file-info-card>
+        </md-card>
     </div>
 </md-content>
