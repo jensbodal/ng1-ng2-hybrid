@@ -444,6 +444,47 @@ export class FileInfoCardComponent implements OnChanges {
 }
 ```
 
+**githubFileInfo.ts**
+
+```
+export class GithubFileInfo {
+  public sha: string;
+  public filename: string;
+  public status: string;
+  public additions: number;
+  public deletions: number;
+  public changes: number;
+  public blob_url: string;
+  public raw_url: string;
+  public contents: string;
+  public patch: string;
+
+  constructor(obj: any) {
+    this.sha = obj.sha;
+    this.filename = obj.filename;
+    this.status = obj.status;
+    this.additions = obj.additions;
+    this.deletions = obj.deletions;
+    this.changes = obj.changes;
+    this.blob_url = obj.blob_url;
+    this.raw_url = obj.raw_url;
+    this.contents = obj.contents;
+
+    if (obj.patch) {
+      this.patch = this.formatPatch(obj.patch);
+    }
+  }
+
+  public toString(): string {
+    return this.filename;
+  }
+
+  private formatPatch(patch: string) {
+    return patch.replace(/\/n\+/g, '\n');
+  }
+}
+```
+
 Instead of specifying the type of binding in the component like we did with AngularJS:
 
 
@@ -507,6 +548,55 @@ The same way you *can* do two-way bindings with component attributes, you can cr
 Also note that there are many pipes available by default like there were with AngularJS, [see here for some examples](https://angular.io/guide/pipes#appendix-no-filterpipe-or-orderbypipe).
 
 Lastly note that in order to use a pipe in your component, the pipe needs to be part of a module, and that module needs to be in the context of the module that your component is declared in. Here I've added the `ObjectPipe` to the `PipesModule` and imported `PipesModule` into the `GithubModule`.  If I wanted the `ObjectPipe` to be available app-wide, I could import it into the main `AppModule`.
+
+**object.pipe.ts**
+
+```
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+  name: 'object'
+})
+
+export class ObjectPipe implements PipeTransform {
+  transform(value: any, exclude: string | string[]): any {
+    if (!value) {
+      return value;
+    }
+
+    const keys = [];
+
+    for (const key of Object.keys(value)) {
+      if (exclude.indexOf(key) !== -1) {
+        continue;
+      }
+
+      keys.push({key: key, value: value[key]});
+    }
+
+    return keys;
+  }
+}
+```
+
+**pipes.module.ts**
+
+```
+import { NgModule } from '@angular/core';
+
+import { ObjectPipe } from './object.pipe';
+
+@NgModule({
+  declarations: [
+    ObjectPipe
+  ],
+  exports: [
+    ObjectPipe
+  ]
+})
+
+export class PipesModule { }
+```
 
 **CSS**
 
@@ -614,7 +704,6 @@ import './downgrades';
     FileInfoCardComponent
   ],
   providers: [
-    { provide: 'githubApi', useExisting: 'githubApiProvider' }
   ],
   bootstrap: [
   ]
