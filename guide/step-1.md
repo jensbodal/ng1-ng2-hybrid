@@ -2,7 +2,7 @@
 
 1 [Comparison from step-0 to step-1](/../../tree/compare/step-0...step-1)
 
-2 [Comparison from step-0 to step-1](/../../compare/step-0...step-1)
+2 [Comparison from step-0 to step-1](/../../../compare/step-0...step-1)
 
 
 3 [Comparison from step-0 to step-1](/tree/step-0)
