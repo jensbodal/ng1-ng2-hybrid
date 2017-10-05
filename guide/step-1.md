@@ -1,6 +1,16 @@
 ## Step 1: Adding Angular
 
-[Comparison from step-0 to step-1](/../../compare/step-0...step-1)
+1 [Comparison from step-0 to step-1](/../../tree/compare/step-0...step-1)
+
+2 [Comparison from step-0 to step-1](/../../compare/step-0...step-1)
+
+
+3 [Comparison from step-0 to step-1](/../tree/step-0)
+
+4 [Comparison from step-0 to step-1](/../../tree/step-0)
+
+5 [Comparison from step-0 to step-1](/../compare/step-0...step-1)
+
 
 *You can checkout the repo at tag [`step-1`](https://github.com/angular-seattle/ng1-ng2-hybrid/tree/step-1) to see the end result of what is detailed here*
 
