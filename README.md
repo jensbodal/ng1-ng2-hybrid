@@ -1,3 +1,3 @@
 # UpgradeModule with Angular/AngularJS
 
-[Guide](./guide)
+[Guide](./guide/guide.md)

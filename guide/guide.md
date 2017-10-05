@@ -6,7 +6,7 @@
 *There was also a memory leak in the `pureAngularjs` component which is not fixed in steps 1-5, fix is addressed
 [here](https://github.com/angular-seattle/ng1-ng2-hybrid/pull/11/files#diff-dc0248ff1bd622babf1fed7c5f2800b1)*
 
-* [Step 0: Starting Point](./step-0)
+* [Step 0: Starting Point](./step-0.md)
 * [Step 1: Adding Angular](./step-1.md)
 * [Step 2: Bootstrapping AngularJS from Angular](https://github.com/angular-seattle/ng1-ng2-hybrid#step-2-bootstrapping-angularjs-from-angular)
 * [Step 3: Modifying the build process](https://github.com/angular-seattle/ng1-ng2-hybrid#step-3-modifying-the-build-process)
