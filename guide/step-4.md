@@ -1,19 +1,19 @@
 ## Step 4: Downgrading an Angular component
 
-[Comparison from step-3 to step-4](/../../../compare/step-3...step-4)
+[Comparison from step-3 to step-4](/../../compare/step-3...step-4)
 
 Whew.  Our app is now running Angular/AngularJS side-by-side and it's integrated into our build process, so let's write some Angular code!
 
 
 For our first Angular component I will rewrite the `src/client/app/github/github.fileInfoCard.component.js` in Angular, downgrade it, then simply use it in AngularJS.
 
-***Note:*** *You might notice that the [`github.fileInfoCard.component`](/../../../blob/step-3/src/client/app/github/github.fileInfoCard.component.js#L16) is incorrectly dependent on the `githubApi` service. Step-4 removes this unused dependency.*
+***Note:*** *You might notice that the [`github.fileInfoCard.component`](/../../blob/step-3/src/client/app/github/github.fileInfoCard.component.js#L16) is incorrectly dependent on the `githubApi` service. Step-4 removes this unused dependency.*
 
 For the first component that's downgraded there is a bit of scaffolding that needs to be done, subsequent downgraded components will be significantly easier to downgrade.
 
 ### Changes
 
-There are a lot of changes here, it's best to view the [comparison from step-3 to step-4](/../../../compare/step-3...step-4) to see all of the changes, however they will be summarized below, with some steps expanded on.
+There are a lot of changes here, it's best to view the [comparison from step-3 to step-4](/../../compare/step-3...step-4) to see all of the changes, however they will be summarized below, with some steps expanded on.
 
 * **.angular-cli.json** updated to use Sass to conform with what is setup on the AngularJS side, also updated our app prefix to `aseed`
 * **package.json** `@types/angular` added (explained in the downgrade section)
@@ -52,9 +52,9 @@ yarn add -ED @types/angular
 
 ### Rewriting the githubFileInfo Component
 
-Our AngularJS application relies on `@angular/material` for display components, so to make things easy for this step we are simply going to wrap the new fileInfo component in an `md-card` component rather than have it do that itself (as it was done [previously](/../../../blob/step-3/src/client/app/github/github.fileInfoCard.component.html)).
+Our AngularJS application relies on `@angular/material` for display components, so to make things easy for this step we are simply going to wrap the new fileInfo component in an `md-card` component rather than have it do that itself (as it was done [previously](/../../blob/step-3/src/client/app/github/github.fileInfoCard.component.html)).
 
-**Note:** *While I'll include the process of rewriting the component in this section, the recommended steps for your first downgraded component are to just create a basic working component, downgrade it, then show that it works.  [Here you can see the commit where I did this](/../../../commit/bdbecdfd5d56a45a0e4992c3d5805d06ae2b92fa).*
+**Note:** *While I'll include the process of rewriting the component in this section, the recommended steps for your first downgraded component are to just create a basic working component, downgrade it, then show that it works.  [Here you can see the commit where I did this](/../../commit/bdbecdfd5d56a45a0e4992c3d5805d06ae2b92fa).*
 
 
 Ideally you are already using components in AngularJS, components became available in [version 1.5](https://github.com/angular/angular.js/blob/master/CHANGELOG.md#features-11). Much of the syntax and style is quite similar to components in Angular, below is an annotated version of the rewritten component.
@@ -278,7 +278,7 @@ export class PipesModule { }
 
 At the beginning of this step we switched over to using sass, something that could have been done when we initially added Angular but I didn't do because I forgot :)
 
-The sass file, like the template file, is [nearly identical](/../../../compare/step-3...step-4#diff-b66c9f29ac5f593f170f95bfdd04fc65). We simply swap out the `github-file-info-card` selector for the [`:host`](https://angular.io/guide/component-styles#host) selector. The `:host` selector is the only way to target the host (component) element.
+The sass file, like the template file, is [nearly identical](/../../compare/step-3...step-4#diff-b66c9f29ac5f593f170f95bfdd04fc65). We simply swap out the `github-file-info-card` selector for the [`:host`](https://angular.io/guide/component-styles#host) selector. The `:host` selector is the only way to target the host (component) element.
 
 #### Github Module
 
@@ -311,7 +311,7 @@ export class GithubModule { }
 
 In the `ngsrc/app` folder create a file called `downgrades.ts`. This file will serve as the soul source of all of our downgraded components and services which will be used in AngularJS. Multiple downgraded directives and services can simply be chained together and all of them will be included and accessible from AngularJS in the `ng.downgrades` module.
 
-#### [downgrades.ts](/../../../compare/step-3...step-4#diff-9b8bacd63e0cf6ee57e7f115fd8a5387)
+#### [downgrades.ts](/../../compare/step-3...step-4#diff-9b8bacd63e0cf6ee57e7f115fd8a5387)
 
 ```
 import { downgradeComponent, downgradeInjectable } from '@angular/upgrade/static';
@@ -339,7 +339,7 @@ angular.module('ng.downgrades', [])
 ```
 
 
-#### [app.module.ts](/../../../compare/step-3...step-4#diff-dbb539c917ba74ef6c5bed31a684680d)
+#### [app.module.ts](/../../compare/step-3...step-4#diff-dbb539c917ba74ef6c5bed31a684680d)
 
 In our app module we now need to include `downgrades.ts` which specifies an AngularJS module `ng.downgrades`.  We then include this module in the bootstrap portion of the app module.
 

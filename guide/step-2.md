@@ -1,6 +1,6 @@
 ## Step 2: Bootstrapping AngularJS from Angular
 
-[Comparison from step-1 to step-2](/../../../compare/step-1...step-2)
+[Comparison from step-1 to step-2](/../../compare/step-1...step-2)
 
 Now that all the files are in place to build the Angular application, we will need to make some modifications to our original code in order to bootstrap AngularJS from the Angular app.  We will not be using the `index.html` file inside of the `ngsrc` folder, instead we will just be using the generated bundles from `dist/ng`.
 

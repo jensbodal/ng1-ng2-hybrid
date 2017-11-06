@@ -1,6 +1,6 @@
 ## Step 5: Adding an Angular Route
 
-[Comparison from step-4 to step-5](/../../../compare/step-4...step-5)
+[Comparison from step-4 to step-5](/../../compare/step-4...step-5)
 
 The most effective way of upgrading your application is to actually replace entire routes with pure Angular code. Depending on what
 services, directives, and components your route is dependent on, this could be a fairly large undertaking. Here I will simply show you how

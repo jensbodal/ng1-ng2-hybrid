@@ -2,7 +2,7 @@
 
 [Comparison from step-0 to step-1](/../../compare/step-0...step-1)
 
-*You can checkout the repo at tag [`step-1`](/../../../tree/step-1) to see the end result of what is detailed here*
+*You can checkout the repo at tag [`step-1`](/../../tree/step-1) to see the end result of what is detailed here*
 
 Ok so we want to introduce Angular, where do we start? First off it's good to read through the official [Upgrading from AngularJS](https://angular.io/guide/upgrade) guide to become familiar with the process and the terminology used.  Some things to consider before embarking on this endeavor for your own applications:
 
@@ -177,7 +177,7 @@ to update the relative path for `extends` and add `angular` to the types array.
 }
 ```
 
-[You can see a summary of the above changes here](/../../../commit/acaa2672571dd05eb725bc266bea472274271a3e)
+[You can see a summary of the above changes here](/../../commit/acaa2672571dd05eb725bc266bea472274271a3e)
 
 (***Note*** `@types/angular` *is not included in this commit because I moved that step here after the fact, it's mentioned later in the guide
  where it's added*)

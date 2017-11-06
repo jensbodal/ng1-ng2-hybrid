@@ -1,6 +1,6 @@
 ## Step 3: Modifying the build process
 
-[Comparison from step-2 to step-3](/../../../compare/step-2...step-3)
+[Comparison from step-2 to step-3](/../../compare/step-2...step-3)
 
 It will probably be most helpful to just check out the comparison between steps 2 and 3 to see the changes that were added to support
 building the Angular application along side AngularJS using grunt. The primary changes being made and how the process works:
